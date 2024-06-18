@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.pinkAccent,
           primary: const Color(0xffEF6CB3),
-          background: const Color(0xffD9D9D9),
+          background: Colors.white,
         ),
         textTheme: GoogleFonts.livvicTextTheme(),
         useMaterial3: true,
