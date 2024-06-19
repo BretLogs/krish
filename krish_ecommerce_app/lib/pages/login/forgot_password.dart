@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:krish_ecommerce_app/consts.dart';
 import 'package:krish_ecommerce_app/pages/login/log_in_password.dart';
+import 'package:krish_ecommerce_app/pages/login/password_reset.dart';
 import 'package:krish_ecommerce_app/widgets/log_in_form_field.dart';
 import 'package:krish_ecommerce_app/widgets/primary_button.dart';
 
@@ -36,7 +37,7 @@ class ForgotPassword extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (BuildContext context) => const LogInPassword()),
+                    MaterialPageRoute(builder: (BuildContext context) => const PasswordResetSplash()),
                   );
                 },
               ),
