@@ -13,6 +13,7 @@ class ContinueLogInButton extends StatelessWidget {
       child: SignInButton(
         icon,
         onPressed: () {},
+        text: 'Continue with ${icon.name}',
       ),
     );
   }

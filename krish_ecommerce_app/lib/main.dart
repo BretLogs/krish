@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.pinkAccent,
           primary: const Color(0xffEF6CB3),
           background: Colors.white,
+          onBackground: const Color.fromARGB(95, 217, 217, 217),
         ),
         textTheme: GoogleFonts.livvicTextTheme(),
         useMaterial3: true,

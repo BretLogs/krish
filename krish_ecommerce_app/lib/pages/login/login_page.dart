@@ -12,31 +12,52 @@ class LogInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Form(
-            child: Column(
-          children: <Widget>[
-            const Text('Sign In'),
-            LogInFormField(
-              hintText: 'Email Address',
-              height: MediaQuery.sizeOf(context).height * .1,
-              validationRegExp: EMAIL_VALIDATION_REGEX,
-              onSaved: (String? value) {},
-            ),
-            const PrimaryButton(),
-            const Row(
-              children: <Widget>[
-                Text("Don't have an Account? "),
-                Text('Create One'),
-              ],
-            ),
-            const ContinueLogInButton(icon: Buttons.apple),
-            const ContinueLogInButton(icon: Buttons.email),
-            const ContinueLogInButton(icon: Buttons.facebook),
-          ],
-        )),
+          child: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(20),
+          child: Form(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const SizedBox(height: 80),
+              Text(
+                'Sign in',
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              LogInFormField(
+                hintText: 'Email Address',
+                validationRegExp: EMAIL_VALIDATION_REGEX,
+                onSaved: (String? value) {},
+              ),
+              const SizedBox(height: 8),
+              const PrimaryButton(text: 'Continue'),
+              const SizedBox(height: 12),
+              Row(
+                children: <Widget>[
+                  Text("Don't have an Account? ", style: Theme.of(context).textTheme.bodySmall),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text('Create One', style: Theme.of(context).textTheme.bodySmall!.copyWith(fontWeight: FontWeight.w600)),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 40),
+              _logInOptions()
+            ],
+          )),
+        ),
       )),
+    );
+  }
+
+  Widget _logInOptions() {
+    return const Column(
+      children: <Widget>[
+        ContinueLogInButton(icon: Buttons.email),
+        ContinueLogInButton(icon: Buttons.apple),
+        ContinueLogInButton(icon: Buttons.facebook),
+      ],
     );
   }
 }

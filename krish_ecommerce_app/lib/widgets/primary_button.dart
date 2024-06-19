@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({super.key});
+  const PrimaryButton({super.key, required this.text});
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +14,9 @@ class PrimaryButton extends StatelessWidget {
             backgroundColor: MaterialStatePropertyAll(
           Theme.of(context).colorScheme.primary,
         )),
-        child: const Text(
-          'Login',
-          style: TextStyle(color: Colors.white),
+        child: Text(
+          text,
+          style: const TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     );
