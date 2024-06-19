@@ -27,6 +27,7 @@ class LogInPassword extends StatelessWidget {
                 hintText: 'Password',
                 validationRegExp: PASSWORD_VALIDATION_REGEX,
                 onSaved: (String? value) {},
+                obscureText: true,
               ),
               const SizedBox(height: 8),
               PrimaryButton(
