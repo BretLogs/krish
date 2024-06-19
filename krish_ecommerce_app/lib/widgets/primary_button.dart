@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({super.key, required this.text});
+  const PrimaryButton({super.key, required this.text, required this.onTap});
   final String text;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onTap,
         style: ButtonStyle(
             backgroundColor: MaterialStatePropertyAll(
           Theme.of(context).colorScheme.primary,

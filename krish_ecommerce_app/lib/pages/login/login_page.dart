@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:krish_ecommerce_app/consts.dart';
+import 'package:krish_ecommerce_app/pages/login/log_in_password.dart';
 import 'package:krish_ecommerce_app/widgets/continue_log_in_button.dart';
 import 'package:krish_ecommerce_app/widgets/primary_button.dart';
 import 'package:krish_ecommerce_app/widgets/log_in_form_field.dart';
@@ -31,7 +32,15 @@ class LogInPage extends StatelessWidget {
                 onSaved: (String? value) {},
               ),
               const SizedBox(height: 8),
-              const PrimaryButton(text: 'Continue'),
+              PrimaryButton(
+                text: 'Continue',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context) => const LogInPassword()),
+                  );
+                },
+              ),
               const SizedBox(height: 12),
               Row(
                 children: <Widget>[
